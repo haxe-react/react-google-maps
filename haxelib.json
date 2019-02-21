@@ -1,0 +1,17 @@
+{
+  "name": "react-google-maps",
+  "license": "MIT",
+  "tags": [
+    "react",
+    "google maps"
+  ],
+  "classPath": "src",
+  "contributors": [
+    "kevinresol"
+  ],
+  "releasenote": "initial release",
+  "version": "0.0.0",
+  "dependencies": {
+    "gmaps": ""
+  }
+}
