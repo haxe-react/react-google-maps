@@ -8,4 +8,8 @@ extern class Polygon extends ReactComponentOfProps<{
 	?defaultEditable:Bool,
 	?path:PathLiteral,
 	?paths:Array<PathLiteral>,
+	?options:{
+		?fillColor:String,
+		?strokeColor:String,
+	}
 }> {}
