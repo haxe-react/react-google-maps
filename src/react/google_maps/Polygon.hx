@@ -1,5 +1,6 @@
 package react.google_maps;
 
+import google.maps.MVCArray;
 import google.maps.Path;
 import react.ReactComponent;
 
@@ -12,4 +13,6 @@ extern class Polygon extends ReactComponentOfProps<{
 		?fillColor:String,
 		?strokeColor:String,
 	}
-}> {}
+}> {
+	function getPaths():MVCArray<Path>;
+}
