@@ -8,5 +8,6 @@ import react.BaseProps;
 @:jsRequire('react-google-maps', 'OverlayView')
 extern class OverlayView extends ReactComponentOfProps<{	
 	> BasePropsWithOptChildren,
+	?mapPaneName:String,
 	?bounds:LatLngBounds,
 }> {}
