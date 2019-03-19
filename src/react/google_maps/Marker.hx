@@ -9,6 +9,7 @@ import google.maps.markerclustererplus.Cluster;
 #if react_global @:native('window["react-google-maps-api"].Marker') #else @:jsRequire('@react-google-maps/api', 'Marker') #end
 extern class Marker extends ReactComponentOfProps<{	
 	> BasePropsWithOptChildren,
+	?onLoad:google.maps.Marker->Void,
 	?clusterer:Cluster,
 	?draggable:Bool,
 	?position:LatLngLiteral,
