@@ -3,11 +3,13 @@ package react.google_maps;
 import react.BaseProps;
 import react.ReactComponent;
 
-@:jsRequire('react-google-maps', 'GoogleMap')
+#if react_global @:native('window["react-google-maps-api"].GoogleMap') #else @:jsRequire('@react-google-maps/api', 'GoogleMap') #end
 extern class GoogleMap extends ReactComponentOfProps<GoogleMapProps> {}
 
 typedef GoogleMapProps = {
 	> BasePropsWithOptChildren,
-	?defaultZoom:Float,
-	?defaultCenter:{lat:Float, lng:Float},
+	?mapContainerStyle:Dynamic,
+	?zoom:Float,
+	?center:{lat:Float, lng:Float},
+	?onLoad:google.maps.Map->Void,
 }

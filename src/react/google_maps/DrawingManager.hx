@@ -3,7 +3,7 @@ package react.google_maps;
 import google.maps.*;
 import react.ReactComponent;
 
-@:jsRequire('react-google-maps/lib/components/drawing/DrawingManager', 'default')
+#if react_global @:native('window["react-google-maps-api"].DrawingManager') #else @:jsRequire('@react-google-maps/api', 'DrawingManager') #end
 extern class DrawingManager extends ReactComponentOfProps<{
 	?defaultDrawingMode:Dynamic,
 	?defaultOptions:Dynamic,

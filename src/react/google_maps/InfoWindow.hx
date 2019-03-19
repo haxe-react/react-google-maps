@@ -6,7 +6,7 @@ import js.html.Element;
 import react.ReactComponent;
 import react.BaseProps;
 
-@:jsRequire('react-google-maps', 'InfoWindow')
+#if react_global @:native('window["react-google-maps-api"].InfoWindow') #else @:jsRequire('@react-google-maps/api', 'InfoWindow') #end
 extern class InfoWindow extends ReactComponentOfProps<{
 	> BasePropsWithOptChildren,
 	?position:LatLngLiteral,

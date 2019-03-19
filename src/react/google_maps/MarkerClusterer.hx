@@ -5,10 +5,10 @@ import react.ReactComponent;
 import react.BaseProps;
 import google.maps.markerclustererplus.Cluster;
 
-@:jsRequire('react-google-maps/lib/components/addons/MarkerClusterer', 'default')
+#if react_global @:native('window["react-google-maps-api"].MarkerClusterer') #else @:jsRequire('@react-google-maps/api', 'MarkerClusterer') #end
 extern class MarkerClusterer extends ReactComponentOfProps<{	
-	> BasePropsWithOptChildren,
-	?averageCenter:Bool,
-	?zoomOnClick:Bool,
-	?onClick:Cluster->Void,
+	@:optional var children:Cluster->ReactFragment;
+	@:optional var averageCenter:Bool;
+	@:optional var zoomOnClick:Bool;
+	@:optional var onClick:Cluster->Void;
 }> {}

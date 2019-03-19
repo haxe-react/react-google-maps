@@ -5,7 +5,7 @@ import haxe.Constraints;
 import react.ReactComponent;
 import react.BaseProps;
 
-@:jsRequire('react-google-maps', 'OverlayView')
+#if react_global @:native('window["react-google-maps-api"].OverlayView') #else @:jsRequire('@react-google-maps/api', 'OverlayView') #end
 extern class OverlayView extends ReactComponentOfProps<{	
 	> BasePropsWithOptChildren,
 	?mapPaneName:String,

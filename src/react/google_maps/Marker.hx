@@ -4,10 +4,12 @@ import google.maps.LatLng;
 import haxe.Constraints;
 import react.ReactComponent;
 import react.BaseProps;
+import google.maps.markerclustererplus.Cluster;
 
-@:jsRequire('react-google-maps', 'Marker')
+#if react_global @:native('window["react-google-maps-api"].Marker') #else @:jsRequire('@react-google-maps/api', 'Marker') #end
 extern class Marker extends ReactComponentOfProps<{	
 	> BasePropsWithOptChildren,
+	?clusterer:Cluster,
 	?draggable:Bool,
 	?position:LatLngLiteral,
 	?onDblClick:Function,
